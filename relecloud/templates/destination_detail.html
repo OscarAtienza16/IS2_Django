@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Relecloud - {{ destination }}
+{% endblock title %}
+
+{% block content %}
+<h1>{{ destination }}</h1>
+<p>{{ destination.description }}</p>
+
+<div>
+    <a href="{% url 'destination_form' destination.id %}">
+        Edit destination
+    </a>
+</div>
+<div>
+    <a href="{% url 'destination_confirm_delete' destination.id %}">
+        Delete destination
+    </a>
+</div>
+
+<p>You can explore {{ destination }} on the following cruises:</p>
+
+<ul class="list-group">
+    {% for cruise in destination.cruises.all %}
+        <a class="list-group-item list-group-item-action" href="{% url 'cruise_detail' cruise.id %}">
+            {{ cruise }}
+        </a>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

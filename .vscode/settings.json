@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/11e57829-6496-4ba9-8d1f-b252b424f703/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/ant-space-tours-oscar",
+    "appService.deploySubpath": "."
+}
